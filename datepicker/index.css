@@ -1,0 +1,196 @@
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+    padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+    list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article>*+* {
+    margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+.ctrl-datepicker{
+    display: inline-block;
+}
+
+.ctrl-datepicker>ul,
+.ctrl-datepicker>ul>li>ul{
+    display: inline-block;
+    user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ctrl-datepicker>ul>li{
+    position: relative;
+}
+
+.ctrl-datepicker>ul>li>ul{
+    position:absolute;
+    visibility: hidden;
+    opacity: 0;
+    min-width: 255px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    width: 100%;
+    margin-top: 2px;
+    transition: .5s ease;
+}
+
+.ctrl-datepicker ul>li:hover>ul{
+    visibility: visible;
+    opacity: 1;
+    box-shadow: 1px 5px 10px -5px #000;
+    transition: .5s ease;
+}
+
+.ctrl-datepicker>ul>li>span{
+    display: block;
+    padding: 15px 3px 15px 3px;
+    font-size: 18px;
+    cursor: default;
+    border-bottom: 2px solid #aaa;
+    transition: all .5s ease;
+    padding: 6px;
+}
+
+.ctrl-datepicker>ul>li>span:hover{
+    border-bottom: 2px solid #0000ff;
+    transition: all .5s ease;
+}
+
+.ctrl-datepicker>ul>li>span>i.bi-chevron-compact-down{
+    float: right;
+    margin-left: 15px;
+}
+
+.ctrl-datepicker>ul>li>ul>li{
+    text-align: center;
+}
+
+.ctrl-datepicker>ul>li>ul>li>table{
+    width: 100%;
+}
+
+.ctrl-datepicker>ul>li>ul>li>table>tbody>tr>td{
+    border: 1px solid #aaa;
+    border-radius: 2px;
+    transition: all .5s ease;
+}
+
+.ctrl-datepicker>ul>li>ul>li>span{
+    display: inline-block;
+    width: 48%;
+    text-align: center;
+    cursor: default;
+    border-bottom: 1px solid #aaa;
+    transition: all .5s ease;
+}
+
+.ctrl-datepicker>ul>li>ul>li>span:hover{
+    border-bottom: 1px solid #0000ff;
+    transition: all .5s ease;
+}
+
+.ctrl-datepicker>ul>li>ul>li>span>i{
+    color:#000;
+    transition: all .5s ease;
+}
+
+.ctrl-datepicker>ul>li>ul>li>span>i:hover{
+    cursor: pointer;
+    color:#0000ff;
+    transition: all .5s ease;
+}
+
+.ctrl-datepicker>ul>li>ul>li>span>b{
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+td.cdate{
+    background-color: #fff000;
+}
+
+td.activeDate{
+    background-color: #aaa;
+}
+
+td.dateMouseOver{
+    border-color: #0000ff !important;
+}
+
+
